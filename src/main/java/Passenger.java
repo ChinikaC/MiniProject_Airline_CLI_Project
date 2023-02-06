@@ -1,14 +1,17 @@
+import java.util.UUID;
+
 public class Passenger {
 
     private String name;
     private long phoneNum;
-    private int uniqueID;
+    private UUID uniqueID;
     private String emailAddress;
 
     public Passenger(String name, long phoneNum,String emailAddress){
         this.name=name;
         this.phoneNum=phoneNum;
         this.emailAddress=emailAddress;
+        this.uniqueID = UUID.randomUUID();
     }
 
     //Getters
@@ -16,7 +19,7 @@ public class Passenger {
         return name;
     }
 
-    public int getUniqueID() {
+    public UUID getUniqueID() {
         return uniqueID;
     }
 
