@@ -4,7 +4,7 @@ public class Passenger {
 
     private String name;
     private long phoneNum;
-    private UUID uniqueID;
+    private final UUID uniqueID;
     private String emailAddress;
 
     public Passenger(String name, long phoneNum,String emailAddress){

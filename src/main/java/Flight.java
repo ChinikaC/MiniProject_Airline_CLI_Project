@@ -1,17 +1,19 @@
+import java.util.HashSet;
 import java.util.Set;
+import java.util.UUID;
 
 public class Flight {
 
     private String destination;
-    private int flightID;
+    private final UUID flightID;
     private String plane;
     private Set<Passenger> passengers;
 
-    public Flight(String destination, int flightID, String plane, Set<Passenger> passengers) {
+    public Flight(String destination, String plane) {
         this.destination = destination;
-        this.flightID = flightID;
+        this.flightID = UUID.randomUUID();
         this.plane = plane;
-        this.passengers = passengers;
+        this.passengers = new HashSet<>();
     }
 
 
@@ -20,7 +22,7 @@ public class Flight {
         return destination;
     }
 
-    public int getFlightID() {
+    public UUID getFlightID() {
         return flightID;
     }
 
@@ -38,10 +40,6 @@ public class Flight {
         this.destination = destination;
     }
 
-    public void setFlightID(int flightID) {
-        this.flightID = flightID;
-    }
-
     public void setPlane(String plane) {
         this.plane = plane;
     }
@@ -52,7 +50,7 @@ public class Flight {
 
     // Methods
     public void addPassengerToFlight(Passenger passenger){
-
+        this.passengers.add(passenger);
     }
 
 
