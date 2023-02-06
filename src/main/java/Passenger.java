@@ -3,11 +3,11 @@ import java.util.UUID;
 public class Passenger {
 
     private String name;
-    private long phoneNum;
+    private String phoneNum;
     private final UUID uniqueID;
     private String emailAddress;
 
-    public Passenger(String name, long phoneNum,String emailAddress){
+    public Passenger(String name, String phoneNum,String emailAddress){
         this.name=name;
         this.phoneNum=phoneNum;
         this.emailAddress=emailAddress;
@@ -23,7 +23,7 @@ public class Passenger {
         return uniqueID;
     }
 
-    public long getPhoneNum() {
+    public String getPhoneNum() {
         return phoneNum;
     }
 
@@ -41,7 +41,7 @@ public class Passenger {
         this.emailAddress = emailAddress;
     }
 
-    public void setPhoneNum(long phoneNum) {
+    public void setPhoneNum(String phoneNum) {
         this.phoneNum = phoneNum;
     }
 }
