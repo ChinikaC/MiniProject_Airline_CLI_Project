@@ -22,7 +22,8 @@ public class Main {
                             "\nlistAllFlights - displays information for all flights" +
                             "\naddPassenger - adds passenger to airport\nbookPassenger - books passenger onto flight" +
                             "\ncancelFlight - cancels flight and returns passenger(s) to airport" +
-                            "\nsearchFlight - searches flights to a destination");
+                            "\nsearchFlight - searches flights to a destination" +
+                            "\nlistAllPassengers - displays information for all passengers");
                     break;
                 case "exit":
                     runner = false;

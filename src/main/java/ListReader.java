@@ -18,8 +18,7 @@ public class ListReader {
         }
         int length = passengerReader.nextInt();
         passengerReader.nextLine();
-        HashSet<Passenger> passengerList = new HashSet<>();
-        for (int i = 0; i<length;i++){
+        for (int i = 0;i<length;i++){
             String name = passengerReader.nextLine();
             String number = passengerReader.nextLine();
             String email = passengerReader.nextLine();
