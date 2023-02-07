@@ -23,7 +23,8 @@ public class Main {
                             "\naddPassenger - adds passenger to airport\nbookPassenger - books passenger onto flight" +
                             "\ncancelFlight - cancels flight and returns passenger(s) to airport" +
                             "\nsearchFlight - searches flights to a destination" +
-                            "\nlistAllPassengers - displays information for all passengers");
+                            "\nlistAllPassengers - displays information for all passengers" +
+                            "\ntakeOff - departs a flight from the airport");
                     break;
                 case "exit":
                     runner = false;
@@ -50,6 +51,9 @@ public class Main {
                 case "listAllPassengers":
                     listPassengers();
                     break;
+                case "takeOff":
+                    flightTakeOff();
+                    break;
                 default:
                     System.out.println("Error - unrecognised command!");
 
@@ -70,6 +74,29 @@ public class Main {
         acs.addFlight(flight);
         System.out.println("Added new flight to " + flight.getDestination()
                 + " with Unique Identifier: " + flight.getFlightID());
+    }
+
+    //take-off command
+    public static void flightTakeOff(){
+        System.out.println("Please enter below the flight details that you would like to depart:");
+        System.out.println("Destination:");
+        String inputDestination = reader.nextLine();
+        System.out.println("Type of plane:");
+        String inputPlane = reader.nextLine();
+        Flight flightToTakeOff = null;
+        for (Flight flight : acs.getListOfFlights()) {
+            if (flight.getDestination().equals(inputDestination) && flight.getPlane().equals(inputPlane)) {
+                flightToTakeOff = flight;
+                break;
+            }
+        }
+        try{
+            System.out.println("Goodmorning this is your captain speaking, we will get to " + flightToTakeOff.getDestination() + " soon!");
+            acs.takeOffFlight(flightToTakeOff);
+        }
+        catch(Exception e){
+            System.out.println("That flight doesn't exist");
+        }
     }
 
     //display all available flights

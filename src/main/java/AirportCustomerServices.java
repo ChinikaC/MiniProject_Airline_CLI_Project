@@ -39,6 +39,10 @@ public class AirportCustomerServices {
         listOfFlights.add(flight);
     }
 
+    public void takeOffFlight(Flight flight) {
+        listOfFlights.remove(flight);
+    }
+
     public void addPassenger(Passenger passenger){
         listOfPassengers.add(passenger);
     }
