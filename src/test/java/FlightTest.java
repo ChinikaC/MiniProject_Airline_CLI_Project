@@ -27,6 +27,8 @@ public class FlightTest {
 
     @RepeatedTest(100000)
     public void canGenUUID(){
+        flight = new Flight("dsklajf","fjkd");
+        flight2 = new Flight("jkdfsa","dfkjs");
         assertThat(flight.getFlightID()).isNotEqualTo(flight2.getFlightID());
     }
 
