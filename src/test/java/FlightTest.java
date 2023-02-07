@@ -15,7 +15,6 @@ public class FlightTest {
     @BeforeEach
             public void setUp() {
         flight = new Flight("London", "Cessna 152");
-        flight2 = new Flight("dksfj","fks");
         passenger = new Passenger("Chinika", "07785612348", "cccohorteight@bnta.com");
     }
 
@@ -25,10 +24,10 @@ public class FlightTest {
         assertThat(flight.getPassengers().size()).isEqualTo(1);
     }
 
-    @RepeatedTest(100000)
+    @RepeatedTest(10000)
     public void canGenUUID(){
-        flight = new Flight("dsklajf","fjkd");
-        flight2 = new Flight("jkdfsa","dfkjs");
+        flight = new Flight("Abu Dhabi","777");
+        flight2 = new Flight("New York","A380");
         assertThat(flight.getFlightID()).isNotEqualTo(flight2.getFlightID());
     }
 

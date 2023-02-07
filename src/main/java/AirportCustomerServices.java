@@ -35,6 +35,8 @@ public class AirportCustomerServices {
         this.name = name;
     }
 
+    // Methods
+
     public void addFlight(Flight flight){
         listOfFlights.add(flight);
     }
@@ -47,7 +49,6 @@ public class AirportCustomerServices {
         this.listOfPassengers.remove(pass);
         flight.addPassengerToFlight(pass);
     }
-
     public void cancelFlight(Flight flight) {
 //        for(Passenger passenger : flight.getPassengers()) {
 //            listOfPassengers.add(passenger);
