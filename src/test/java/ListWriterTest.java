@@ -20,7 +20,8 @@ public class ListWriterTest {
     void canWritePassengersToFile(){
         acs.addPassenger(new Passenger("James","7438549","hskjdfhkjsf"));
         acs.addPassenger(new Passenger("sjdlkasd","7438549","hskjdfhkjsf"));
-        assertThat(acs.getListOfPassengers().size()).isEqualTo(2);
+        acs.addPassenger((new Passenger("Chinika","=44123456799","email@gmail.com")));
+        assertThat(acs.getListOfPassengers().size()).isEqualTo(3);
         ListWriter.writePassengersToFile(acs);
         File file = new File("src/main/passengers.txt");
         try{
@@ -29,6 +30,6 @@ public class ListWriterTest {
         catch(Exception e){
             System.out.println("Error");
         }
-        assertThat(scanner.nextLine()).isEqualTo("2");
+        assertThat(scanner.nextLine()).isEqualTo("3");
     }
 }

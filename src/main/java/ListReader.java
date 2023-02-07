@@ -16,8 +16,7 @@ public class ListReader {
         catch(Exception e){
             System.out.println("error");
         }
-        int length = passengerReader.nextInt();
-        passengerReader.nextLine();
+        int length = Integer.valueOf(passengerReader.nextLine());
         for (int i = 0;i<length;i++){
             String name = passengerReader.nextLine();
             String number = passengerReader.nextLine();
