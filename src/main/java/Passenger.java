@@ -14,6 +14,13 @@ public class Passenger {
         this.uniqueID = UUID.randomUUID();
     }
 
+    public Passenger(String name, String phoneNum, String emailAddress, UUID uniqueID){
+        this.name = name;
+        this.phoneNum = phoneNum;
+        this.emailAddress = emailAddress;
+        this.uniqueID = uniqueID;
+    }
+
     //Getters
     public String getName() {
         return name;
