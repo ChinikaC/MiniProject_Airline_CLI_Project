@@ -9,6 +9,7 @@ public class Main {
 
         // boolean to determine running/not running of program
         boolean runner = true;
+        ListReader.readPassengers(acs);
 
         while(runner) {
         // take input
@@ -25,6 +26,7 @@ public class Main {
                     break;
                 case "exit":
                     runner = false;
+                    ListWriter.writePassengersToFile(acs);
                     break;
                 case "addFlight":
                     addFlight();
@@ -43,6 +45,9 @@ public class Main {
                     break;
                 case "searchFlight":
                     searchFlight();
+                    break;
+                case "listAllPassengers":
+                    listPassengers();
                     break;
                 default:
                     System.out.println("Error - unrecognised command!");
@@ -72,6 +77,14 @@ public class Main {
         for (Flight flight : acs.getListOfFlights())
             System.out.println("There is a flight to " + flight.getDestination() + ". It is operated on a "
                     + flight.getPlane() + ". There are " + flight.getPassengers().size() + " passengers on this flight.");
+    }
+
+    //list all passengers in the airport
+    public static void listPassengers(){
+        System.out.println("\nPlease see below all passengers in " + acs.getName()+":");
+        for (Passenger pass : acs.getListOfPassengers())
+            System.out.println("There is a passenger called " + pass.getName() + ". They have the unique ID: "
+                    + pass.getUniqueID() + ".");
     }
 
     //add a new passenger to the airport system
