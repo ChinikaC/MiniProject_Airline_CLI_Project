@@ -166,7 +166,7 @@ public class Main {
         }
     }
 
-        //cancel a flight
+    //cancel a flight
     public static void cancelFlight(){
         System.out.println("\nPlease enter below the flight details that you would like to cancel:");
         System.out.println("Destination:");
