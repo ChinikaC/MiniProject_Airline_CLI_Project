@@ -20,7 +20,8 @@ public class Main {
                             "\nexit - exits the program\naddFlight - adds flight to airport" +
                             "\nlistAllFlights - displays information for all flights" +
                             "\naddPassenger - adds passenger to airport\nbookPassenger - books passenger onto flight" +
-                            "\ncancelFlight - cancels flight and returns passenger(s) to airport");
+                            "\ncancelFlight - cancels flight and returns passenger(s) to airport" +
+                            "\nsearchFlight - searches flights to a destination");
                     break;
                 case "exit":
                     runner = false;
@@ -39,6 +40,9 @@ public class Main {
                     break;
                 case "cancelFlight":
                     cancelFlight();
+                    break;
+                case "searchFlight":
+                    searchFlight();
                     break;
                 default:
                     System.out.println("Error - unrecognised command!");
@@ -143,4 +147,27 @@ public class Main {
             System.out.println("Please enter the right plane info!");
         }
     }
+
+    // adding search functionality
+    public static void searchFlight(){
+        System.out.println("\nPlease enter the destination you would like to search flight(s) for: ");
+        int numberOfFlights = 0;
+        String destination = reader.nextLine();
+
+        for(Flight flight: acs.getListOfFlights()){
+            if (flight.getDestination().equals(destination)){
+                System.out.println("There is a flight to " + flight.getDestination()
+                        + " with Unique Identifier: " + flight.getFlightID() +
+                        " operated on a " + flight.getPlane());
+                numberOfFlights++;
+            }
+        }
+        if(numberOfFlights == 0){
+            System.out.println("There are no flights to " + destination);
+        }
+
+    }
+
+
+
 }
