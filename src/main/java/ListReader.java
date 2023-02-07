@@ -7,22 +7,8 @@ import java.util.UUID;
 public class ListReader {
 
     static Scanner passengerReader;
-    //static Scanner flightReader = new Scanner("src/main/flightList.txt");
 
-//    public static void main(String[] args) {
-//        File text = new File("src/main/passengers.txt");
-//        try{
-//            passengerReader = new Scanner(text);
-//        }
-//        catch(Exception e){
-//            System.out.println("error");
-//        }
-//        Passenger guy = readPassenger();
-//        System.out.println(guy.getName()+ guy.getUniqueID().toString());
-//
-//    }
-
-    public static HashSet<Passenger> readPassengers(AirportCustomerServices acs){
+    public static void readPassengers(AirportCustomerServices acs){
         File text = new File("src/main/passengers.txt");
         try{
             passengerReader = new Scanner(text);
@@ -40,8 +26,5 @@ public class ListReader {
             UUID uniqueID = UUID.fromString(passengerReader.nextLine());
             acs.addPassenger(new Passenger(name, number, email, uniqueID));
         }
-
-        return passengerList;
     }
-
 }
