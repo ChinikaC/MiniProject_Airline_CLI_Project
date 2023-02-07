@@ -7,6 +7,45 @@ public class Main {
         reader = new Scanner(System.in);
         acs  = new AirportCustomerServices("This Airport");
 
+        // boolean to determine running/not running of program
+        boolean runner = true;
+
+        while(runner) {
+        // take input
+        String input = reader.nextLine();
+
+            switch (input) {
+                case "help":
+                    System.out.println("The commands are as follows:\n\nhelp - shows list of commands" +
+                            "\nexit - exits the program\naddFlight - adds flight to airport" +
+                            "\nlistAllFlights - displays information for all flights" +
+                            "\naddPassenger - adds passenger to airport\nbookPassenger - books passenger onto flight" +
+                            "\ncancelFlight - cancels flight and returns passenger(s) to airport");
+                    break;
+                case "exit":
+                    runner = false;
+                    break;
+                case "addFlight":
+                    addFlight();
+                    break;
+                case "listAllFlights":
+                    listFlights();
+                    break;
+                case "addPassenger":
+                    addPassenger();
+                    break;
+                case "bookPassenger":
+                    bookPassenger();
+                    break;
+                case "cancelFlight":
+                    cancelFlight();
+                    break;
+                default:
+                    System.out.println("Error - unrecognised command!");
+
+            }
+
+        }
 
 
     }
